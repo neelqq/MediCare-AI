@@ -3,7 +3,7 @@ package com.example.testAI.testAIRagVectorDB;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.example.testAI.testAIRagVectorDB")
 public class TestAiRagVectorDbApplication {
 
 	public static void main(String[] args) {
