@@ -7,7 +7,7 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import Cart from './pages/Cart'
 
-// 🔐 Protected Route
+
 function ProtectedRoute({ children }) {
   const token = localStorage.getItem('token')
   return token ? children : <Navigate to="/login" />
@@ -30,7 +30,7 @@ export default function App() {
       <nav className="navbar">
         <h1>💊 MediCare AI</h1>
 
-        {/* ❌ Not Logged In */}
+        
         {!token && (
           <>
             <Link to="/login">Login</Link>
@@ -38,7 +38,7 @@ export default function App() {
           </>
         )}
 
-        {/* ✅ Logged In */}
+       
         {token && (
           <>
             <Link to="/">Medicine List</Link>
@@ -65,13 +65,13 @@ export default function App() {
         )}
       </nav>
 
-      {/* 🔁 Routes */}
+  
       <Routes>
-        {/* Public */}
+    
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
 
-        {/* Private */}
+   
         <Route
           path="/"
           element={
@@ -117,7 +117,7 @@ export default function App() {
           }
         />
 
-        {/* ⚠️ Fallback */}
+      
         <Route path="*" element={<Navigate to="/login" />} />
       </Routes>
     </>
